@@ -3,204 +3,199 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>produced by Tristan</title>
+<title>Produced by Tristan</title>
 <style>
-    /* ---------- GENERAL ---------- */
-    body {
-        font-family: 'Arial', sans-serif;
-        margin: 0;
-        background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
-        color: #fff;
-        transition: background 0.5s;
-    }
+/* ---------- GENERAL ---------- */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background: #0d0d1a;
+    color: #e0e0ff;
+    transition: background 0.5s;
+}
 
-    header {
-        padding: 60px 20px;
-        text-align: center;
-        background: linear-gradient(90deg, #1a1a1a, #222);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-    }
+header {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(90deg, #1f1f3a, #12122b);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
 
-    header h1 {
-        margin: 0;
-        font-size: 3rem;
-        color: #4da3ff;
-        text-shadow: 1px 1px 5px #000;
-    }
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    color: #4da3ff;
+    text-shadow: 1px 1px 5px #000;
+}
 
-    header p {
-        font-size: 1.2rem;
-        color: #ccc;
-    }
+header p {
+    font-size: 1.2rem;
+    color: #aaaaff;
+}
 
-    section {
-        padding: 50px 20px;
-        max-width: 1000px;
-        margin: auto;
-        border-radius: 12px;
-        margin-bottom: 40px;
-    }
+section {
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: auto;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    background: linear-gradient(180deg, #12122b, #1a1a40);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
 
-    h2 {
-        text-align: center;
-        margin-bottom: 25px;
-        font-size: 2rem;
-        border-bottom: 3px solid #4da3ff;
-        display: inline-block;
-        padding-bottom: 5px;
-        color: #4da3ff;
-        text-shadow: 1px 1px 3px #000;
-    }
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    border-bottom: 3px solid #4da3ff;
+    display: inline-block;
+    padding-bottom: 5px;
+    color: #4da3ff;
+    text-shadow: 1px 1px 3px #000;
+}
 
-    a {
-        color: #4da3ff;
-        text-decoration: none;
-        transition: color 0.3s;
-    }
+a {
+    color: #4da3ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
 
-    a:hover {
-        color: #00d1ff;
-        text-decoration: underline;
-    }
+a:hover {
+    color: #00d1ff;
+    text-decoration: underline;
+}
 
-    footer {
-        text-align: center;
-        padding: 30px;
-        background: #222;
-        color: #aaa;
-        border-top: 1px solid #444;
-    }
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #1f1f3a;
+    color: #aaaaff;
+    border-top: 1px solid #444;
+}
 
-    .pricing-box {
-        background: #1a1a1a;
-        padding: 25px;
-        border-radius: 12px;
-        margin-bottom: 15px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        transition: transform 0.3s;
-    }
+/* ---------- PRICING BOX ---------- */
+.pricing-box {
+    background: #1b1b33;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: transform 0.3s;
+}
 
-    .pricing-box:hover {
-        transform: scale(1.03);
-    }
+.pricing-box:hover {
+    transform: scale(1.03);
+}
 
-    /* ---------- COLLAPSIBLE BUTTONS ---------- */
-    .collapsible {
-        background-color: #1a1a1a;
-        color: #fff;
-        cursor: pointer;
-        padding: 15px 20px;
-        width: 100%;
-        border: none;
-        text-align: left;
-        outline: none;
-        font-size: 1.2rem;
-        border-radius: 12px;
-        margin-bottom: 10px;
-        transition: background 0.3s, transform 0.3s;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    }
+/* ---------- COLLAPSIBLE ---------- */
+.collapsible {
+    background-color: #1b1b33;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
 
-    .collapsible:hover {
-        background-color: #333;
-        transform: scale(1.02);
-    }
+.collapsible:hover {
+    background-color: #333366;
+    transform: scale(1.02);
+}
 
-    .content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease, transform 0.3s;
-        margin-bottom: 20px;
-    }
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, transform 0.3s;
+    margin-bottom: 20px;
+}
 
-    .collapsible.active + .content {
-        max-height: 2000px;
-    }
+.collapsible.active + .content {
+    max-height: 2000px;
+}
 
-    /* ---------- SOUND-CLOUD ---------- */
-    .music-embed {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        padding: 15px 0;
-    }
+/* ---------- SOUND-CLOUD ---------- */
+.music-embed {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 15px 0;
+}
 
-    .music-embed iframe {
-        width: 100%;
-        max-width: 800px;
-        height: 166px;
-        margin: 0 auto;
-        border-radius: 12px;
-        border: 2px solid #4da3ff;
-        background: #000;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-    }
+.music-embed iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 166px;
+    margin: 0 auto;
+    border-radius: 12px;
+    border: 2px solid #4da3ff;
+    background: #000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
 
-    /* ---------- TIKTOK GRID ---------- */
+/* ---------- TIKTOK GRID ---------- */
+.tiktok-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 15px 0;
+}
+
+.tiktok-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 177.78%;
+    transition: transform 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tiktok-wrapper:hover {
+    transform: scale(1.03);
+    z-index: 2;
+}
+
+/* ---------- ABOUT ME ---------- */
+.about-images {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.about-images img {
+    width: 250px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid #4da3ff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(77,163,255,0.7);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
     .tiktok-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        padding: 15px 0;
+        grid-template-columns: 1fr;
     }
-
-    .tiktok-wrapper {
-        position: relative;
-        width: 100%;
-        padding-top: 177.78%;
-        transition: transform 0.3s ease;
-        border-radius: 12px;
-        overflow: hidden;
-    }
-
-    .tiktok-wrapper:hover {
-        transform: scale(1.03);
-        z-index: 2;
-    }
-
-    .tiktok-wrapper blockquote {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100% !important;
-        height: 100% !important;
-    }
-
-    /* ---------- ABOUT ME ---------- */
-    .about-images {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 20px;
-    }
-
     .about-images img {
-        width: 250px;
-        border-radius: 12px;
-        object-fit: cover;
-        border: 2px solid #4da3ff;
-        transition: transform 0.3s, box-shadow 0.3s;
+        width: 100%;
+        max-width: 300px;
     }
-
-    .about-images img:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 15px rgba(77,163,255,0.7);
+    section h2 {
+        font-size: 1.5rem;
     }
-
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-        .tiktok-grid {
-            grid-template-columns: 1fr;
-        }
-        .about-images img {
-            width: 100%;
-            max-width: 300px;
-        }
-        section h2 {
-            font-size: 1.5rem;
-        }
-    }
+}
 </style>
 </head>
 <body>
@@ -214,25 +209,21 @@
 <section id="portfolio">
     <h2>My Work</h2>
 
-    <!-- COLLAPSIBLE SOUND-CLOUD -->
     <button class="collapsible">🎵 SoundCloud Tracks</button>
     <div class="content">
         <div class="music-embed">
             <iframe scrolling="no" frameborder="no" allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/o-l-d-soul/i-can-feel-it&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/o-l-d-soul/i-can-feel-it&color=%23ff5500&auto_play=false">
             </iframe>
-
             <iframe scrolling="no" frameborder="no" allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/tristan-cook-26145375/saquon-barkley-from-the-philadelphia-eagles&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/tristan-cook-26145375/saquon-barkley-from-the-philadelphia-eagles&color=%23ff5500&auto_play=false">
             </iframe>
-
             <iframe scrolling="no" frameborder="no" allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/tristan-cook-26145375/big-dog&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/tristan-cook-26145375/big-dog&color=%23ff5500&auto_play=false">
             </iframe>
         </div>
     </div>
 
-    <!-- COLLAPSIBLE TIKTOK -->
     <button class="collapsible">🎬 TikTok Videos</button>
     <div class="content">
         <div class="tiktok-grid">
@@ -260,17 +251,14 @@
 <!-- ---------- PRICING ---------- -->
 <section id="pricing">
     <h2>Pricing</h2>
-
     <div class="pricing-box">
         <h3>🎧 Beat Production</h3>
         <p>$50 per custom beat, $30 for anything off my Instagram</p>
     </div>
-
     <div class="pricing-box">
         <h3>🎤 Mixing & Mastering</h3>
         <p>$50 per song</p>
     </div>
-
     <div class="pricing-box">
         <h3>📀 Full Project Bundle</h3>
         <p>Price Varies for full EP/album</p>
@@ -281,11 +269,12 @@
 <section id="about">
     <h2>About Me</h2>
     <p>Hello! I'm Tristan Cook, a music producer and artist passionate about creating beats and composing songs that resonate. Below are some photos from my journey.</p>
-
     <div class="about-images">
         <img src="images/me1.jpg" alt="Tristan Cook">
         <img src="images/me2.jpg" alt="Performing">
-        <!-- Add more images here -->
+        <img src="images/me3.jpg" alt="Studio">
+        <img src="images/me4.jpg" alt="Live Performance">
+        <img src="images/me5.jpg" alt="Album Cover">
     </div>
 </section>
 
@@ -311,6 +300,5 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
-
 </body>
 </html>
