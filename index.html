@@ -1,150 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>produced by tristan</title>
-    <style>
-        /* ---------- GENERAL ---------- */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #111;
-            color: #fff;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>produced by Tristan</title>
+<style>
+    /* ---------- GENERAL ---------- */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #111;
+        color: #fff;
+    }
 
-        header {
-            padding: 60px 20px;
-            text-align: center;
-            background: #222;
-        }
+    header {
+        padding: 60px 20px;
+        text-align: center;
+        background: #222;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
-        }
+    header h1 {
+        margin: 0;
+        font-size: 3rem;
+    }
 
-        header p {
-            font-size: 1.2rem;
-            color: #ccc;
-        }
+    header p {
+        font-size: 1.2rem;
+        color: #ccc;
+    }
 
-        section {
-            padding: 40px 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
+    section {
+        padding: 40px 20px;
+        max-width: 1000px;
+        margin: auto;
+    }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 25px;
-        }
+    h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 2rem;
+        border-bottom: 2px solid #4da3ff;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
 
-        a {
-            color: #4da3ff;
-        }
+    a {
+        color: #4da3ff;
+        text-decoration: none;
+    }
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #222;
-            margin-top: 40px;
-            color: #aaa;
-        }
+    a:hover {
+        text-decoration: underline;
+    }
 
-        .pricing-box {
-            background: #222;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
+    footer {
+        text-align: center;
+        padding: 30px;
+        background: #222;
+        margin-top: 40px;
+        color: #aaa;
+    }
 
-        /* ---------- PORTFOLIO ---------- */
-        /* Instagram Reels Grid */
-        .reels-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
+    .pricing-box {
+        background: #222;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
 
-        .reels-grid blockquote {
-            margin: 0;
-        }
+    /* ---------- COLLAPSIBLE BUTTONS ---------- */
+    .collapsible {
+        background-color: #222;
+        color: #fff;
+        cursor: pointer;
+        padding: 15px 20px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 1.2rem;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        transition: background 0.3s;
+    }
 
-        /* SoundCloud Tracks Styling */
-        .music-embed {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
+    .collapsible:hover {
+        background-color: #333;
+    }
 
-        .music-embed iframe {
+    /* Smooth collapsing animation */
+    .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        margin-bottom: 20px;
+    }
+
+    .collapsible.active + .content {
+        max-height: 2000px; /* Enough to fit content */
+    }
+
+    /* ---------- SOUND-CLOUD ---------- */
+    .music-embed {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 15px 0;
+    }
+
+    .music-embed iframe {
+        width: 100%;
+        max-width: 800px;
+        height: 166px;
+        margin: 0 auto;
+        border-radius: 12px;
+        border: 1px solid #333;
+        background: #000;
+    }
+
+    /* ---------- TIKTOK GRID ---------- */
+    .tiktok-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 15px 0;
+    }
+
+    .tiktok-wrapper {
+        position: relative;
+        width: 100%;
+        padding-top: 177.78%; /* 9:16 aspect ratio for vertical video */
+    }
+
+    .tiktok-wrapper blockquote {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* ---------- ABOUT ME ---------- */
+    .about-images {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .about-images img {
+        width: 250px;
+        border-radius: 12px;
+        object-fit: cover;
+        border: 2px solid #333;
+        transition: transform 0.3s;
+    }
+
+    .about-images img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+        .tiktok-grid {
+            grid-template-columns: 1fr;
+        }
+        .about-images img {
             width: 100%;
-            max-width: 800px;
-            height: 166px;
-            margin: 0 auto;
-            border-radius: 12px;
-            border: 1px solid #333;
-            background: #000;
+            max-width: 300px;
         }
-
-        /* Section Headers */
         section h2 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            text-align: center;
-            color: #fff;
-            border-bottom: 2px solid #4da3ff;
-            display: inline-block;
-            padding-bottom: 5px;
+            font-size: 1.5rem;
         }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            .reels-grid {
-                grid-template-columns: 1fr;
-            }
-            section h2 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
 
 <header>
     <h1>Tristan Cook</h1>
-    <p>Producer • Artist </p>
+    <p>Producer • Artist • Composer</p>
 </header>
 
+<!-- ---------- PORTFOLIO ---------- -->
 <section id="portfolio">
     <h2>My Work</h2>
 
-    <!-- Instagram Reels Grid -->
-    <div class="reels-grid">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQ5Z5s6jjYc/" data-instgrm-version="14"></blockquote>
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQ7H2ouERVo/" data-instgrm-version="14"></blockquote>
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQLK9FsjoNS/" data-instgrm-version="14"></blockquote>
+    <!-- COLLAPSIBLE SOUND-CLOUD -->
+    <button class="collapsible">🎵 SoundCloud Tracks</button>
+    <div class="content">
+        <div class="music-embed">
+            <iframe scrolling="no" frameborder="no" allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/o-l-d-soul/i-can-feel-it&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
+            </iframe>
+
+            <iframe scrolling="no" frameborder="no" allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/tristan-cook-26145375/saquon-barkley-from-the-philadelphia-eagles&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
+            </iframe>
+
+            <iframe scrolling="no" frameborder="no" allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/tristan-cook-26145375/big-dog&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
+            </iframe>
+        </div>
     </div>
-    <script async src="//www.instagram.com/embed.js"></script>
 
-    <!-- SoundCloud Tracks -->
-    <div class="music-embed">
-        <iframe scrolling="no" frameborder="no" allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/o-l-d-soul/i-can-feel-it&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
-        </iframe>
-
-        <iframe scrolling="no" frameborder="no" allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/tristan-cook-26145375/saquon-barkley-from-the-philadelphia-eagles&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
-        </iframe>
-
-        <iframe scrolling="no" frameborder="no" allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/tristan-cook-26145375/big-dog&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
-        </iframe>
+    <!-- COLLAPSIBLE TIKTOK -->
+    <button class="collapsible">🎬 TikTok Videos</button>
+    <div class="content">
+        <div class="tiktok-grid">
+            <div class="tiktok-wrapper">
+                <blockquote class="tiktok-embed" data-video-id="7571219992746691871">
+                    <a href="https://www.tiktok.com/@t.ristancook/video/7571219992746691871"></a>
+                </blockquote>
+            </div>
+            <div class="tiktok-wrapper">
+                <blockquote class="tiktok-embed" data-video-id="7570254879583784222">
+                    <a href="https://www.tiktok.com/@t.ristancook/video/7570254879583784222"></a>
+                </blockquote>
+            </div>
+            <div class="tiktok-wrapper">
+                <blockquote class="tiktok-embed" data-video-id="7565255533456854303">
+                    <a href="https://www.tiktok.com/@t.ristancook/video/7565255533456854303"></a>
+                </blockquote>
+            </div>
+        </div>
     </div>
 </section>
 
+<script async src="https://www.tiktok.com/embed.js"></script>
+
+<!-- ---------- PRICING ---------- -->
 <section id="pricing">
     <h2>Pricing</h2>
 
@@ -164,6 +250,19 @@
     </div>
 </section>
 
+<!-- ---------- ABOUT ME ---------- -->
+<section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm Tristan Cook, a music producer and artist passionate about creating beats and composing songs that resonate. Below are some photos from my journey.</p>
+
+    <div class="about-images">
+        <img src="images/me1.jpg" alt="Tristan Cook">
+        <img src="images/me2.jpg" alt="Performing">
+        <!-- Add more images here -->
+    </div>
+</section>
+
+<!-- ---------- CONTACT ---------- -->
 <section id="contact">
     <h2>Contact</h2>
     <p>Email me at: <a href="mailto:tristan.cook@outlook.com">tristan.cook@outlook.com</a></p>
@@ -173,6 +272,18 @@
 <footer>
     © 2025 Tristan Cook — All Rights Reserved
 </footer>
+
+<!-- ---------- COLLAPSIBLE SCRIPT ---------- -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const coll = document.querySelectorAll(".collapsible");
+    coll.forEach(button => {
+        button.addEventListener("click", function() {
+            this.classList.toggle("active");
+        });
+    });
+});
+</script>
 
 </body>
 </html>
