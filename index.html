@@ -166,43 +166,10 @@ footer {
     border-radius: 12px;
 }
 
-/* ---------- ABOUT ME ---------- */
-.about-images {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.about-images img {
-    width: 250px;
-    border-radius: 12px;
-    object-fit: cover;
-    border: 2px solid #4da3ff;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.3s;
-}
-
-.about-images img.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.about-images img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(77,163,255,0.7);
-}
-
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 600px) {
     .tiktok-grid {
         grid-template-columns: 1fr;
-    }
-    .about-images img {
-        width: 100%;
-        max-width: 300px;
     }
     section h2 {
         font-size: 1.5rem;
@@ -220,12 +187,6 @@ footer {
 <!-- ---------- PORTFOLIO ---------- -->
 <section id="portfolio">
     <h2>My Work</h2>
-
-    <!-- Instagram Reels Link -->
-    <p style="text-align:center; font-size:1.2rem; margin-bottom:20px;">
-        Check out my Instagram Reels: 
-        <a href="https://www.instagram.com/t.ristancook/reels/" target="_blank">@t.ristancook Reels</a>
-    </p>
 
     <button class="collapsible">🎵 SoundCloud Tracks</button>
     <div class="content">
@@ -256,6 +217,13 @@ footer {
             </div>
         </div>
     </div>
+
+    <button class="collapsible">📷 Instagram</button>
+    <div class="content">
+        <p style="text-align:center;">
+            Check out my Instagram Reels: <a href="https://www.instagram.com/t.ristancook/?hl=en" target="_blank">@t.ristancook</a>
+        </p>
+    </div>
 </section>
 
 <!-- ---------- PRICING ---------- -->
@@ -279,13 +247,6 @@ footer {
 <section id="about">
     <h2>About Me</h2>
     <p>Hey, my name is Tristan Cook. I'm a producer and trumpet player who wants to create meaningful music with anyone willing. I work mainly in hiphop, but can adapt to any style. I currently have projects in the works in R&B, Hip Hop, Hyperpop, Folk, and Jazz. Stay tuned, I have some big things coming!</p>
-    <div class="about-images">
-        <img src="images/me1.jpg" alt="Tristan Cook">
-        <img src="images/me2.jpg" alt="Performing">
-        <img src="images/me3.jpg" alt="Studio">
-        <img src="images/me4.jpg" alt="Live Performance">
-        <img src="images/me5.jpg" alt="Album Cover">
-    </div>
 </section>
 
 <!-- ---------- CONTACT ---------- -->
@@ -308,17 +269,6 @@ document.addEventListener("DOMContentLoaded", function() {
             this.classList.toggle("active");
         });
     });
-
-    // Fade-in About Me images
-    const images = document.querySelectorAll(".about-images img");
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) {
-                entry.target.classList.add("visible");
-            }
-        });
-    }, { threshold: 0.3 });
-    images.forEach(img => observer.observe(img));
 });
 </script>
 
