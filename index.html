@@ -7,21 +7,25 @@
 <style>
     /* ---------- GENERAL ---------- */
     body {
-        font-family: Arial, sans-serif;
+        font-family: 'Arial', sans-serif;
         margin: 0;
-        background: #111;
+        background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
         color: #fff;
+        transition: background 0.5s;
     }
 
     header {
         padding: 60px 20px;
         text-align: center;
-        background: #222;
+        background: linear-gradient(90deg, #1a1a1a, #222);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     }
 
     header h1 {
         margin: 0;
         font-size: 3rem;
+        color: #4da3ff;
+        text-shadow: 1px 1px 5px #000;
     }
 
     header p {
@@ -30,26 +34,32 @@
     }
 
     section {
-        padding: 40px 20px;
+        padding: 50px 20px;
         max-width: 1000px;
         margin: auto;
+        border-radius: 12px;
+        margin-bottom: 40px;
     }
 
     h2 {
         text-align: center;
         margin-bottom: 25px;
         font-size: 2rem;
-        border-bottom: 2px solid #4da3ff;
+        border-bottom: 3px solid #4da3ff;
         display: inline-block;
         padding-bottom: 5px;
+        color: #4da3ff;
+        text-shadow: 1px 1px 3px #000;
     }
 
     a {
         color: #4da3ff;
         text-decoration: none;
+        transition: color 0.3s;
     }
 
     a:hover {
+        color: #00d1ff;
         text-decoration: underline;
     }
 
@@ -57,20 +67,26 @@
         text-align: center;
         padding: 30px;
         background: #222;
-        margin-top: 40px;
         color: #aaa;
+        border-top: 1px solid #444;
     }
 
     .pricing-box {
-        background: #222;
-        padding: 20px;
-        border-radius: 8px;
+        background: #1a1a1a;
+        padding: 25px;
+        border-radius: 12px;
         margin-bottom: 15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        transition: transform 0.3s;
+    }
+
+    .pricing-box:hover {
+        transform: scale(1.03);
     }
 
     /* ---------- COLLAPSIBLE BUTTONS ---------- */
     .collapsible {
-        background-color: #222;
+        background-color: #1a1a1a;
         color: #fff;
         cursor: pointer;
         padding: 15px 20px;
@@ -79,25 +95,26 @@
         text-align: left;
         outline: none;
         font-size: 1.2rem;
-        border-radius: 8px;
+        border-radius: 12px;
         margin-bottom: 10px;
-        transition: background 0.3s;
+        transition: background 0.3s, transform 0.3s;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
 
     .collapsible:hover {
         background-color: #333;
+        transform: scale(1.02);
     }
 
-    /* Smooth collapsing animation */
     .content {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.5s ease;
+        transition: max-height 0.5s ease, transform 0.3s;
         margin-bottom: 20px;
     }
 
     .collapsible.active + .content {
-        max-height: 2000px; /* Enough to fit content */
+        max-height: 2000px;
     }
 
     /* ---------- SOUND-CLOUD ---------- */
@@ -114,8 +131,9 @@
         height: 166px;
         margin: 0 auto;
         border-radius: 12px;
-        border: 1px solid #333;
+        border: 2px solid #4da3ff;
         background: #000;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     }
 
     /* ---------- TIKTOK GRID ---------- */
@@ -129,7 +147,15 @@
     .tiktok-wrapper {
         position: relative;
         width: 100%;
-        padding-top: 177.78%; /* 9:16 aspect ratio for vertical video */
+        padding-top: 177.78%;
+        transition: transform 0.3s ease;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .tiktok-wrapper:hover {
+        transform: scale(1.03);
+        z-index: 2;
     }
 
     .tiktok-wrapper blockquote {
@@ -153,12 +179,13 @@
         width: 250px;
         border-radius: 12px;
         object-fit: cover;
-        border: 2px solid #333;
-        transition: transform 0.3s;
+        border: 2px solid #4da3ff;
+        transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .about-images img:hover {
         transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(77,163,255,0.7);
     }
 
     /* Responsive adjustments */
