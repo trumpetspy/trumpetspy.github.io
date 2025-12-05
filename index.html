@@ -3,11 +3,110 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Music Portfolio</title>
+    <title>produced by Tristans</title>
     <style>
-    <body>
-  <h1>Hello — it works!</h1>
-  <p>If you see this, GitHub Pages is rendering my site correctly.</p>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #111;
+            color: #fff;
+        }
+        header {
+            padding: 60px 20px;
+            text-align: center;
+            background: #222;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .music-embed {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .pricing-box {
+            background: #222;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #222;
+            margin-top: 40px;
+            color: #aaa;
+        }
+        a {
+            color: #4da3ff;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Tristan Cook</h1>
+    <p>Producer • Artist • Composer</p>
+</header>
+
+<section id="portfolio">
+    <h2>My Work</h2>
+    <div class="music-embed">
+        <!-- Replace these with your own embeds -->
+        <iframe width="100%" height="166" scrolling="no" 
+            frameborder="no" 
+            src="soundcloud.com/tristan-cook-26145375">
+        </iframe>
+
+        <iframe width="100%" height="315" 
+            src="https://www.instagram.com/t.ristancook/reels/" 
+            frameborder="0" allowfullscreen>
+        </iframe>
+    </div>
+</section>
+
+<section id="pricing">
+    <h2>Pricing</h2>
+
+    <div class="pricing-box">
+        <h3>🎧 Beat Production</h3>
+        <p>$50 per track</p>
+    </div>
+
+    <div class="pricing-box">
+        <h3>🎤 Mixing & Mastering</h3>
+        <p>$50 per song</p>
+    </div>
+
+    <div class="pricing-box">
+        <h3>📀 Full Project Bundle</h3>
+        <p>Price Varies for full EP/album</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email me at: <a href="mailto:youremail@example.com">tristan.cook@outlook.com</a></p>
+    <p>Instagram: <a href="#">@t.ristancook</a></p>
+</section>
+
+<footer>
+    © 2025 Tristan Cook — All Rights Reserved
+</footer>
+
 </body>
-
-
+</html>
