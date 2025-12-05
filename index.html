@@ -5,45 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>produced by Tristan</title>
     <style>
+        /* ---------- GENERAL ---------- */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             background: #111;
             color: #fff;
         }
+
         header {
             padding: 60px 20px;
             text-align: center;
             background: #222;
         }
+
         header h1 {
             margin: 0;
             font-size: 3rem;
         }
+
         header p {
             font-size: 1.2rem;
             color: #ccc;
         }
+
         section {
             padding: 40px 20px;
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
         }
+
         h2 {
             text-align: center;
             margin-bottom: 25px;
         }
-        .music-embed {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+
+        a {
+            color: #4da3ff;
         }
-        .pricing-box {
-            background: #222;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
+
         footer {
             text-align: center;
             padding: 30px;
@@ -51,8 +51,63 @@
             margin-top: 40px;
             color: #aaa;
         }
-        a {
-            color: #4da3ff;
+
+        .pricing-box {
+            background: #222;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* ---------- PORTFOLIO ---------- */
+        /* Instagram Reels Grid */
+        .reels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .reels-grid blockquote {
+            margin: 0;
+        }
+
+        /* SoundCloud Tracks Styling */
+        .music-embed {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .music-embed iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 166px;
+            margin: 0 auto;
+            border-radius: 12px;
+            border: 1px solid #333;
+            background: #000;
+        }
+
+        /* Section Headers */
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #fff;
+            border-bottom: 2px solid #4da3ff;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .reels-grid {
+                grid-template-columns: 1fr;
+            }
+            section h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -68,33 +123,34 @@
 
     <!-- Instagram Reels Grid -->
     <div class="reels-grid">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQ5Z5s6jjYc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" data-instgrm-version="14"></blockquote>
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQ7H2ouERVo/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" data-instgrm-version="14"></blockquote>
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQLK9FsjoNS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQ5Z5s6jjYc/" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQ7H2ouERVo/" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQLK9FsjoNS/" data-instgrm-version="14"></blockquote>
     </div>
     <script async src="//www.instagram.com/embed.js"></script>
 
     <!-- SoundCloud Tracks -->
     <div class="music-embed">
-        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-            src="https://soundcloud.com/o-l-d-soul/i-can-feel-it?si=8744486ff4cb4937a843e485fb22660e&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
+        <iframe scrolling="no" frameborder="no" allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/o-l-d-soul/i-can-feel-it&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
         </iframe>
-        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-            src="https://soundcloud.com/tristan-cook-26145375/saquon-barkley-from-the-philadelphia-eagles?si=b64e37c8d5b7476fb660e7d21d59bf06&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
+
+        <iframe scrolling="no" frameborder="no" allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/tristan-cook-26145375/saquon-barkley-from-the-philadelphia-eagles&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
         </iframe>
-        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-            src="https://soundcloud.com/tristan-cook-26145375/big-dog?si=9e6e67e40b0341dd8cd3c644af03fd79&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
-        </iframe><!-- Add more tracks here -->
+
+        <iframe scrolling="no" frameborder="no" allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/tristan-cook-26145375/big-dog&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
+        </iframe>
     </div>
 </section>
-
 
 <section id="pricing">
     <h2>Pricing</h2>
 
     <div class="pricing-box">
         <h3>🎧 Beat Production</h3>
-        <p>$50 per custom beat, $30 for anything off my instagram</p>
+        <p>$50 per custom beat, $30 for anything off my Instagram</p>
     </div>
 
     <div class="pricing-box">
@@ -110,8 +166,8 @@
 
 <section id="contact">
     <h2>Contact</h2>
-    <p>Email me at: <a href="mailto:youremail@example.com">tristan.cook@outlook.com</a></p>
-    <p>Instagram: <a href="#">@t.ristancook</a></p>
+    <p>Email me at: <a href="mailto:tristan.cook@outlook.com">tristan.cook@outlook.com</a></p>
+    <p>Instagram: <a href="https://instagram.com/t.ristancook" target="_blank">@t.ristancook</a></p>
 </section>
 
 <footer>
