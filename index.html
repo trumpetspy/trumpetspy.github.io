@@ -111,16 +111,14 @@ footer {
 .content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
     margin-bottom: 20px;
     opacity: 0;
-    transform: translateY(20px);
 }
 
 .collapsible.active + .content {
     max-height: 2000px;
     opacity: 1;
-    transform: translateY(0);
 }
 
 /* ---------- SOUND-CLOUD ---------- */
@@ -153,13 +151,19 @@ footer {
 .tiktok-wrapper {
     position: relative;
     width: 100%;
+    padding-bottom: 177.78%; /* 9:16 aspect ratio */
+    overflow: hidden;
+    border-radius: 12px;
 }
 
 .tiktok-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 12px;
     border: none;
+    border-radius: 12px;
 }
 
 /* ---------- ABOUT ME ---------- */
@@ -268,13 +272,13 @@ footer {
 <!-- ---------- ABOUT ME ---------- -->
 <section id="about">
     <h2>About Me</h2>
-    <p>Hey, my name is Tristan Cook. I'm a producer and trumpet player who wants to create meaningful music with anyone willing. I work mainly in hiphop, but can adapt to any style. I currently have projects in the works in R&B, Hip Hop, Hyperpop, Folk, and Jazz. 2026 is going to be a big year!</p>
+    <p>Hello! I'm Tristan Cook, a music producer and artist passionate about creating beats and composing songs that resonate. Below are some photos from my journey.</p>
     <div class="about-images">
-        <img src="images/me1.jpg" 
-        <img src="images/me2.jpg" 
-        <img src="images/me3.jpg" 
-        <img src="images/me4.jpg" 
-        <img src="images/me5.jpg" 
+        <img src="images/me1.jpg" alt="Tristan Cook">
+        <img src="images/me2.jpg" alt="Performing">
+        <img src="images/me3.jpg" alt="Studio">
+        <img src="images/me4.jpg" alt="Live Performance">
+        <img src="images/me5.jpg" alt="Album Cover">
     </div>
 </section>
 
@@ -289,9 +293,9 @@ footer {
     © 2025 Tristan Cook — All Rights Reserved
 </footer>
 
-<!-- ---------- SCRIPTS ---------- -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+    // Collapsible sections
     const coll = document.querySelectorAll(".collapsible");
     coll.forEach(button => {
         button.addEventListener("click", function() {
@@ -299,7 +303,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Fade-in for About Me images
+    // Fade-in About Me images
     const images = document.querySelectorAll(".about-images img");
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -311,5 +315,6 @@ document.addEventListener("DOMContentLoaded", function() {
     images.forEach(img => observer.observe(img));
 });
 </script>
+
 </body>
 </html>
