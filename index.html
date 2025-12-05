@@ -11,7 +11,6 @@ body {
     margin: 0;
     background: #0d0d1a;
     color: #e0e0ff;
-    transition: background 0.5s;
 }
 
 header {
@@ -112,12 +111,16 @@ footer {
 .content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease, transform 0.3s;
+    transition: max-height 0.5s ease;
     margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 .collapsible.active + .content {
     max-height: 2000px;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* ---------- SOUND-CLOUD ---------- */
@@ -150,15 +153,13 @@ footer {
 .tiktok-wrapper {
     position: relative;
     width: 100%;
-    padding-top: 177.78%;
-    transition: transform 0.3s ease;
-    border-radius: 12px;
-    overflow: hidden;
 }
 
-.tiktok-wrapper:hover {
-    transform: scale(1.03);
-    z-index: 2;
+.tiktok-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: none;
 }
 
 /* ---------- ABOUT ME ---------- */
@@ -175,7 +176,14 @@ footer {
     border-radius: 12px;
     object-fit: cover;
     border: 2px solid #4da3ff;
-    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.3s;
+}
+
+.about-images img.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .about-images img:hover {
@@ -228,25 +236,17 @@ footer {
     <div class="content">
         <div class="tiktok-grid">
             <div class="tiktok-wrapper">
-                <blockquote class="tiktok-embed" data-video-id="7571219992746691871">
-                    <a href="https://www.tiktok.com/@t.ristancook/video/7571219992746691871"></a>
-                </blockquote>
+                <iframe src="https://www.tiktok.com/embed/7571219992746691871" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
             <div class="tiktok-wrapper">
-                <blockquote class="tiktok-embed" data-video-id="7570254879583784222">
-                    <a href="https://www.tiktok.com/@t.ristancook/video/7570254879583784222"></a>
-                </blockquote>
+                <iframe src="https://www.tiktok.com/embed/7570254879583784222" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
             <div class="tiktok-wrapper">
-                <blockquote class="tiktok-embed" data-video-id="7565255533456854303">
-                    <a href="https://www.tiktok.com/@t.ristancook/video/7565255533456854303"></a>
-                </blockquote>
+                <iframe src="https://www.tiktok.com/embed/7565255533456854303" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </div>
     </div>
 </section>
-
-<script async src="https://www.tiktok.com/embed.js"></script>
 
 <!-- ---------- PRICING ---------- -->
 <section id="pricing">
@@ -289,7 +289,7 @@ footer {
     © 2025 Tristan Cook — All Rights Reserved
 </footer>
 
-<!-- ---------- COLLAPSIBLE SCRIPT ---------- -->
+<!-- ---------- SCRIPTS ---------- -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const coll = document.querySelectorAll(".collapsible");
@@ -298,6 +298,17 @@ document.addEventListener("DOMContentLoaded", function() {
             this.classList.toggle("active");
         });
     });
+
+    // Fade-in for About Me images
+    const images = document.querySelectorAll(".about-images img");
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, { threshold: 0.3 });
+    images.forEach(img => observer.observe(img));
 });
 </script>
 </body>
